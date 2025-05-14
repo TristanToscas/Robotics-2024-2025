@@ -7,22 +7,25 @@ import com.qualcomm.robotcore.hardware.PwmControl;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
 @Config
-@TeleOp(group = "Test")
+@TeleOp(name = "ServoTweak", group = "Testing")
 
-public class ServoTweak extends OpMode {
+public class ServoTweak extends OpMode
+{
     ServoImplEx Sg;
     public static double Opos = 0.55;
     public static double Cpos = 0;
     int Scount = 0;
     @Override
-    public void init() {
+    public void init()
+    {
         Sg = hardwareMap.get(ServoImplEx.class, "Gs");
         Sg.setPwmRange(new PwmControl.PwmRange(500, 2500));
     }
-
     @Override
-    public void loop() {
-        if(gamepad1.b && Scount == 0) {
+    public void loop()
+    {
+        if(gamepad1.b && Scount == 0)
+        {
             Sg.setPosition(Opos);
             Scount++;
         }

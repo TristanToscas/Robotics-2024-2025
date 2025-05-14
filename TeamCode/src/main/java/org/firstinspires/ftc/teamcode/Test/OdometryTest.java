@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
-@TeleOp(group = "Test")
+@TeleOp(name = "OdoTest", group = "Testing")
 public class OdometryTest extends OpMode {
     DcMotor x, y;
     double TicksToInches = (4.8 * Math.PI) / ((2000) * 2.54);

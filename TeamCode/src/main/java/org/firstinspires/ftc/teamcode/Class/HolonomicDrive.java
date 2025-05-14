@@ -31,7 +31,7 @@ public class HolonomicDrive
     double adjustedYaw;
 
     ///// Create Motion Variables
-    double accel = 0.5; // Determine how fast the robot should go to full speed
+    double accel = 0.2; // Determine how fast the robot should go to full speed
 
     // Actual motor power
     double  leftFront_power  = 0,
@@ -96,8 +96,8 @@ public class HolonomicDrive
         telemetry.addData("initializing", "motors");
 
         // Reverse Motor Directions for Positive Values
-        leftBack .setDirection(DcMotor.Direction.REVERSE);
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        rightBack .setDirection(DcMotor.Direction.REVERSE);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
         telemetry.addData("reversing", "motors");
     }
 
@@ -127,7 +127,7 @@ public class HolonomicDrive
         // Cool vector math to calculate power to the drive motors
         x = -leftStickX;
         y = leftStickY;
-        turn = rightStickX;
+        turn = -rightStickX;
 
         // Input variables in new version are power and theta
         double theta = Math.atan2(y,x);

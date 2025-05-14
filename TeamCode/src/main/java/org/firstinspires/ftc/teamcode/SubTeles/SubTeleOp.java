@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp(group = "TeleOp")
+@TeleOp(name = "SubTeleOp", group = "TeleOp")
 public class SubTeleOp extends OpMode {
 
     //Declaring the DcMotor variable that stores the motor names
